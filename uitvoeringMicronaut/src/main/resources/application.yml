@@ -1,0 +1,27 @@
+micronaut:
+  application:
+    name: uitvoeringmicronaut
+  server:
+    port: 8010
+datasources:
+  default:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    db-type: mysql
+    dialect: MYSQL
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:4050/backend-db
+    username: user
+    password: heelgeheimwachtwoord
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+jpa:
+  default:
+    entity-scan:
+      packages:
+        - be.pxl.domain
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+netty:
+  default:
+    allocator:
+      max-order: 3
